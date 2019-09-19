@@ -7,12 +7,10 @@ import { createAddMovieValidator } from "./validators/addMovie.validator";
 export const createMoviesRouter = (): Router => {
   const moviesRouter = Router();
 
-  moviesRouter
-    .route("/")
-    .get(fetchMovies)
-    .post(createAddMovieValidator(), addMovie);
+  moviesRouter.get("/", fetchMovies);
+  moviesRouter.post("/", createAddMovieValidator(), addMovie);
 
-  logRoutersPaths(moviesRouter);
+  logRoutersPaths(moviesRouter, "movies");
 
   return moviesRouter;
 };
