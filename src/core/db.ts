@@ -9,7 +9,12 @@ export const createDBConnection = (
 
     connect(
       connectionLink,
-      { useNewUrlParser: true, useUnifiedTopology: true },
+      {
+        useCreateIndex: true,
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false
+      },
       err => {
         if (err) {
           reject(err);
