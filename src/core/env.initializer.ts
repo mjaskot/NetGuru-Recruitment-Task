@@ -2,7 +2,10 @@ require("dotenv").config();
 
 export enum envVariables {
   PORT = "PORT",
-  NODE_ENV = "NODE_ENV"
+  NODE_ENV = "NODE_ENV",
+  OMDB_API_KEY = "OMDB_API_KEY",
+  MONGO_URL = "MONGO_URL",
+  MONGO_DB_NAME = "MONGO_DB_NAME"
 }
 
 export const getEnvVariable = (variable: envVariables) => {
