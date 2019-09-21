@@ -1,4 +1,4 @@
-import { fetchMovieFromOMDb } from "../_helpers/OMDb";
+import { fetchMovieFromOMDb } from "./../_helpers/omdb";
 import * as MoviesRepository from "./movies.repository";
 
 export const createMovieBasedOnOMDbResponse = async (
