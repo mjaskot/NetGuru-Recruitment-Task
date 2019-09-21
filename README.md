@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="logo.png" width="600" height="250"></img>
+    <img src="logo.png" width="600" height="180"></img>
     <p align="center">
         Recruitment task for <a href="https://www.netguru.com/">NetGuru</a>
     </p>
