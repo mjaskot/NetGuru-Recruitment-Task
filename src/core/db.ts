@@ -18,12 +18,11 @@ export const createDBConnection = (
       }
     )
       .then(() => {
-        logger.info("Database Connected!");
         resolve(true);
       })
       .catch(err => {
         logger.error(`Error connecting to database! ${err.stack}`);
-        reject(err);
+        reject(false);
       });
   });
 };

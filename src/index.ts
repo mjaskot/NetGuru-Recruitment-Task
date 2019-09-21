@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-import createExpressApp from "./app";
+import { createExpressApp } from "./app";
 import { logger } from "./core/logger";
 import { envVariables, getEnvVariable } from "./core/env.initializer";
 import { createDBConnection } from "./core/db";
@@ -12,8 +12,10 @@ const dbName = getEnvVariable(envVariables.MONGO_DB_NAME);
 
 const bootstrap = async () => {
   const app = createExpressApp(BASE_API_PATH);
-  createDBConnection(mongoUrl, dbName);
   try {
+    if (await createDBConnection(mongoUrl, dbName)) {
+      logger.info("Database connected!");
+    }
     app.listen(port, () =>
       logger.info(`Server is listening on port -> ${port}`)
     );

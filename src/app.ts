@@ -7,7 +7,7 @@ import { createMoviesRouter } from "./movies/movies.router";
 import { createCommentsRouter } from "./comments/comments.router";
 import { ErrorHandler } from "./core/error.handler";
 
-const createExpressApp = (baseApiPath: string) => {
+export const createExpressApp = (baseApiPath: string) => {
   const app = express();
 
   app.use(bodyParser.json());
@@ -19,5 +19,3 @@ const createExpressApp = (baseApiPath: string) => {
 
   return app;
 };
-
-export default createExpressApp;
