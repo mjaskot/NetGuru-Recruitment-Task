@@ -1,5 +1,5 @@
 import { CommentModel } from "./comments.model";
-import { IComment } from "./interfaces/Comment.interface";
+import { IComment } from "./interfaces/comment.interface";
 import { StatusError } from "../core/error.handler";
 
 export const createComment = async (params: IComment): Promise<IComment> => {

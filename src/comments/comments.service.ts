@@ -5,7 +5,7 @@ import {
   getAllComments,
   updateComment
 } from "./comments.repository";
-import { IComment } from "./interfaces/Comment.interface";
+import { IComment } from "./interfaces/comment.interface";
 
 export const addComment = async (
   movieId: string,

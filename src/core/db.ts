@@ -1,4 +1,5 @@
 import { connect } from "mongoose";
+import { logger } from "./logger";
 
 export const createDBConnection = (
   mongoUrl: string,
@@ -14,14 +15,15 @@ export const createDBConnection = (
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false
-      },
-      err => {
-        if (err) {
-          reject(err);
-        }
-        console.log("Database connected!");
-        resolve(true);
       }
-    );
+    )
+      .then(() => {
+        logger.info("Database Connected!");
+        resolve(true);
+      })
+      .catch(err => {
+        logger.error(`Error connecting to database! ${err.stack}`);
+        reject(err);
+      });
   });
 };
