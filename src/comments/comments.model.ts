@@ -3,7 +3,7 @@ import { ObjectId } from "bson";
 
 import { getModel } from "./../core/getmodel";
 
-class CommentSchema extends Typegoose {
+export class CommentSchema extends Typegoose {
   @prop({ required: true })
   movieId: ObjectId;
 
