@@ -71,8 +71,8 @@ export const getAllComments = async (
   next: NextFunction
 ) => {
   try {
-    const { movieId } = req.query;
-    const data = await getComments(movieId);
+    const { movieId, userId } = req.query;
+    const data = await getComments(movieId, userId);
     return res.status(200).json(data);
   } catch (err) {
     return next(err);

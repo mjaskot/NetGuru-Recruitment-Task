@@ -24,8 +24,8 @@ export const removeComment = async (commentId: string) => {
   return deleteComment(commentId);
 };
 
-export const getComments = async (movieId?: string) => {
-  return getAllComments(movieId);
+export const getComments = async (movieId?: string, userId?: string) => {
+  return getAllComments(movieId, userId);
 };
 
 export const modifyComment = async (commentId: string, message: string) => {

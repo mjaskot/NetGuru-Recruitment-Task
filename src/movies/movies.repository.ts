@@ -7,16 +7,18 @@ export const createMovie = async (params: IMovie): Promise<IMovie> => {
 };
 
 export const getMovies = async (): Promise<IMovie[]> => {
-  return MovieModel.find({}).exec();
+  return MovieModel.find({})
+    .lean()
+    .exec();
 };
 
 export const checkIfMovieExistsInDb = async (title: string, year: string) => {
-  const foundMovie = await MovieModel.find({
+  const foundMovies = await MovieModel.find({
     Title: title,
     Year: year
   }).exec();
 
-  if (foundMovie.length === 1) {
+  if (foundMovies.length) {
     throw new StatusError(
       409,
       "Movie with such title and production year already exists in database"
