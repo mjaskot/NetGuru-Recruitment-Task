@@ -67,7 +67,7 @@ POST `api/v1/comments` -> Adds new comment. Required body:
 }
 ```
 
-GET `api/v1/comments?=:movieId` -> Returns all comments in database, if query parameter is passed it returns all comments with such movie Id.
+GET `api/v1/comments?movieId=<movieId>&userId=<userId>` -> Returns all comments in database, if query parameter is passed it returns all comments with such movie Id or user Id or all comments user made on given movie if both parameters are passed.
 
 GET `api/v1/comments/:commentId` -> Returns single desired comment by ID.
 
