@@ -103,4 +103,4 @@ To run unit tests simply use:
 
 ## Hosting
 
-Application is hosted on heroku udner this URL ->
+Application is hosted on heroku and all request should be made to URL -> gentle-hamlet-29655.herokuapp.com/api/v1/
