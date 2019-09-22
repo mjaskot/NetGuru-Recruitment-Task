@@ -5,7 +5,8 @@ export enum envVariables {
   NODE_ENV = "NODE_ENV",
   OMDB_API_KEY = "OMDB_API_KEY",
   MONGO_URL = "MONGO_URL",
-  MONGO_DB_NAME = "MONGO_DB_NAME"
+  MONGO_DB_NAME = "MONGO_DB_NAME",
+  MONGO_DB_USER_PASSWORD = "MONGO_DB_USER_PASSWORD"
 }
 
 export const getEnvVariable = (variable: envVariables) => {

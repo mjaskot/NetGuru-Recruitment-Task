@@ -5,7 +5,7 @@ services:
     container_name: "NetGuru-Recruitment-Task"
     build:
       context: "."
-      dockerfile: "./docker/dockerfile"
+      dockerfile: "./Dockerfile"
     working_dir: "/app"
     ports:
       - "3000:3000"

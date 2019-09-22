@@ -1,12 +1,16 @@
 import { connect } from "mongoose";
+
 import { logger } from "./logger";
+import { envVariables, getEnvVariable } from "./env.initializer";
+
+const dbUserPassword = getEnvVariable(envVariables.MONGO_DB_USER_PASSWORD);
 
 export const createDBConnection = (
   mongoUrl: string,
   dbName: string
 ): Promise<Boolean> => {
   return new Promise((resolve, reject) => {
-    const connectionLink = `mongodb://${mongoUrl}:27017/${dbName}`;
+    const connectionLink = `${mongoUrl}://dbUser:${dbUserPassword}@${dbName}-7kyrp.mongodb.net/test?retryWrites=true&w=majority`;
 
     connect(
       connectionLink,
