@@ -6,9 +6,13 @@
   "repository": "git@github.com:mjaskot/NetGuru-Recruitment-Task.git",
   "author": "mjaskot <jaskotmarcin1@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
-    "start": "nodemon",
     "build": "tsc --p tsconfig.json",
+    "start": "tsc --p tsconfig.json && node ./dist/index.js",
+    "start:dev": "nodemon",
     "start:prod": "node ./dist/index.js",
     "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
